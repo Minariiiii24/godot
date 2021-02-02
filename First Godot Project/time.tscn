@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Rambutan Reach Art Assets/TimeBar - 1.png" type="Texture" id=2]
+[ext_resource path="res://Rambutan Reach Art Assets/TimeBar - 2.png" type="Texture" id=3]
+[ext_resource path="res://Rambutan Reach Art Assets/TimeBar - 4.png" type="Texture" id=4]
+[ext_resource path="res://Rambutan Reach Art Assets/TimeBar - 3.png" type="Texture" id=5]
+[ext_resource path="res://Rambutan Reach Art Assets/TimeBar - 0.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 201.203, 238.904 )
+scale = Vector2( 0.736008, 1 )
+frames = SubResource( 1 )
+frame = 4
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
